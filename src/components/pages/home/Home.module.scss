@@ -1,0 +1,15 @@
+.home {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+	background-color: #ffffff;
+	color: black;
+	main {
+		margin-top: 135px;
+	}
+	footer {
+		margin-top: auto;
+	}
+}
