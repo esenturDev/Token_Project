@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import MainRoutes from "./routes/MainRoutes";
+import MainRoutes from "./components/layout/Layout";
 import { store } from "./redux/store";
 
 const App = () => {

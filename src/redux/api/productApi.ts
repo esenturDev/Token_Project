@@ -1,12 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { Products } from "./types";
 
-interface Products {
-	id?: number;
-	name: string;
-	photoUrl: string;
-	price: string;
-	quantity: string;
-}
 
 // interface CreateUserRequest {
 //   id?: number;
@@ -20,12 +14,20 @@ export const productApi = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: "https://brand-store.up.railway.app" }),
 	endpoints: (builder) => {
 		return {
-			getProducts: builder.query<Products[], void>({
+			getProducts: builder.query<Products.GetProductsResponse, Products.GetProductsRequest>({
 				query: () => ({
 					url: "products",
 					headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
 				}),
 			}),
+			postProducts: builder.mutation<Products.PostProductsResponse, Products.PostProductsRequest>({
+				query: ({productName, price, quantity, photoUrl}) => ({
+					url: "products",
+					method: "POST",
+					body: {productName, price, quantity, photoUrl},
+					headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+				})
+			})
 			// createUser: builder.mutation<CreateUserResponse, CreateUserRequest>({
 			//   query: ({email, password, userName}) => ({
 			//     url: 'users',
@@ -37,4 +39,4 @@ export const productApi = createApi({
 	},
 });
 
-export const { useGetProductsQuery } = productApi;
+export const { useGetProductsQuery, usePostProductsMutation } = productApi;
