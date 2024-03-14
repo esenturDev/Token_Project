@@ -30,3 +30,73 @@ header {
 		}
 	}
 }
+.formsHeaderContainer {
+	display: flex;
+	flex-direction: column;
+	padding-block: 1.2rem;
+	padding-inline: 1.5rem;
+	.modalContent1 {
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		padding-bottom: 2.4rem;
+		h3 {
+			color: #343635;
+			font-weight: 700;
+			font-size: 1.2rem;
+		}
+		img {
+			opacity: 5%;
+			width: 40px;
+			height: 40px;
+			cursor: pointer;
+			// color: #343635;
+			background-color: #343635;
+			border-radius: 50%;
+			// position: relative;
+			// z-index: 100;
+		}
+	}
+	.form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		.formAndLabelAndInput {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			label {
+				color: #c2c5cd;
+				font-weight: 500;
+				font-size: 0.9rem;
+			}
+			.inputs {
+				background-color: aliceblue;
+				width: 26.8rem;
+				padding-left: 15px;
+				height: 3.1rem;
+				border-radius: 8px;
+				border: 1px solid #7e8494;
+				color: #343635;
+				font-weight: 400;
+				font-size: 1rem;
+			}
+		}
+		.buttonsIsForms {
+			display: flex;
+			align-items: center;
+			gap: 1.5rem;
+			button {
+				background-color: #7e8494;
+				padding-block: 1.2rem;
+				padding-inline: 2rem;
+				color: #ffffff;
+				font-weight: 400;
+				font-size: 0.9rem;
+				border-radius: 10px;
+				border: none;
+				cursor: pointer;
+			}
+		}
+	}
+}
