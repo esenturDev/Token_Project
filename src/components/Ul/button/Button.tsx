@@ -1,4 +1,4 @@
-import React, { FC, ButtonHTMLAttributes } from "react";
+import  { FC, ButtonHTMLAttributes } from "react";
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: "primary" | "secondary";
 	color?: string;
